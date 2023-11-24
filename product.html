@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+  <section id="header">
+    <a href="./index.html" class="logo"><i class="fas fa-shopping-bag"></i> StepUpStyle</a>
+
+    <div>
+      <ul id="navbar">
+        <li><a href="./index.html">Home</a></li>
+        <li class="dropdown">
+            <a href="#" class="dropbtn">Product</a>
+            <div class="dropdown-content">
+                <a href="./kurta.html" style="font-weight: 200;">Kurtis</a>
+                <a href="./dress.html" style="font-weight: 200;">Dresses</a>
+                <a href="./men.html" style="font-weight: 200;">T- Shirts</a>
+                <a href="./watch.html" style="font-weight: 200;">Watches</a>
+                <a href="./shoes.html" style="font-weight: 200;">Shoes</a>
+            </div>
+        </li>
+        <li><a href="./index.html">About</a></li>
+        <li><a href="./index.html">Contact</a></li>
+        <li><a href="./cart.html"><i class="fas fa-shopping-bag"></i></a></li>
+    </ul>
+    </div>
+    <div id="mobile">          
+        <a href="./cart.html"><i class="fas fa-shopping-bag"></i></a>
+        <i id="bar" class="fas fa-outdent"></i>
+    </div>
+</section>
+
+        <div class = "main-wrapper">
+            <div class = "container">
+                <div class = "product-div">
+                    <div class = "product-div-left">
+                        <div class = "img-container">
+                            <img src = "./images/1.1.png" alt = "watch">
+                        </div>
+                        <div class = "hover-container">
+                            <div><img src = "./images/1.1.png"></div>
+                            <div><img src = "./images/1.5.png"></div>
+                            <div><img src = "./images/1.3.png"></div>
+                            <div><img src = "./images/1.4.png"></div>
+                            <div><img src = "./images/1.2.png"></div>
+                        </div>
+                    </div>
+                    <div class = "product-div-right">
+                        <span class = "product-name">Straight Cotton Kurta - For Women</span>
+                        <span class = "product-price">Rs 599</span>
+                        <div class = "product-rating">
+                            <span><i class = "fas fa-star"></i></span>
+                            <span><i class = "fas fa-star"></i></span>
+                            <span><i class = "fas fa-star"></i></span>
+                            <span><i class = "fas fa-star"></i></span>
+                            <span><i class = "fas fa-star-half-alt"></i></span>
+                            <span>(350 ratings)</span>
+                        </div>
+                        <p class = "product-description"> Top Fabric : Cotton Slub , Bottom Fabric : Cotton Slub <br>Package Contents : One Mustard And Sage Green Kurta Set<br> <br>Description : Mustard & sage green kurta set, with round neck, three quarter sleeves, thread & tassel detailing, comes with printed palazzo pants. </p><br>
+                        <form class="size">
+                            <label for="size">Size :</label><br>
+                            <button type="button">XS</button>
+                            <button type="button">S</button>
+                            <button type="button">M</button>
+                            <button type="button">L</button>
+                            <button type="button">XL</button>
+                        </form>
+                        <div class = "btn-groups">
+                            <button type = "button" class = "add-cart-btn"><i class = "fas fa-shopping-cart"></i>add to cart</button>
+                            <button type = "button" class = "buy-now-btn"><i class = "fas fa-wallet"></i>buy now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    
+        <footer>
+            <div class="footer-container">
+              <div class="footer-section">
+                <div class="logo">
+                  <a href="#" style="font-size: 20px;">StepUpStyle</a>
+                </div>
+                <p>&copy; 2023 StepUpStyle. All rights reserved.</p>
+                <p>Contact us: info@stepupstyle.com</p>
+              </div>
+        
+              <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                  <li><a href="#">Home</a></li>
+                  <li><a href="#">Shop</a></li>
+                  <li><a href="#">About Us</a></li>
+                  <li><a href="#">Contact</a></li>
+                </ul>
+              </div>
+        
+              <div class="footer-section">
+                <h3>Connect with Us</h3>
+                <div class="social-icons">
+                  <a href="#" target="_blank"><img src="./facebook-circle-logo-24.png" alt="Facebook"></a>
+                  <a href="#" target="_blank"><img src="./instagram-logo-24.png" alt="Twitter"></a>
+                  <a href="#" target="_blank"><img src="./linkedin-logo-24.png" alt="Instagram"></a>
+                </div>
+              </div>
+        
+              <div class="footer-section">
+                <h3>Subscribe to Our Newsletter</h3>
+                <form action="#" method="post">
+                  <input type="email" name="email" placeholder="Your email">
+                  <button type="submit">Subscribe</button>
+                </form>
+              </div>
+            </div>
+          </footer>
+        
+
+    
+
+    <script src="./script.js"></script>
+    
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const urlParams = new URLSearchParams(window.location.search);
+      const imageName = urlParams.get("image");
+      const name = urlParams.get("name");
+      const description = urlParams.get("description");
+      const price = urlParams.get("price");
+      const additionalImages = urlParams.get("additionalImages")?.split(",");
+      
+      document.querySelector(".product-name").textContent = name || "Product Name";
+      document.querySelector(".product-price").textContent = `Rs ${price || 0}`;
+  
+      const descriptionParagraph = document.querySelector(".product-description");
+      if (descriptionParagraph) {
+        const descriptionLines = (description || "").split("<br>");
+        descriptionParagraph.innerHTML = descriptionLines
+          .map((line) => `<p>${line.trim()}</p>`)
+          .join("");
+      }
+
+      const breadcrumbList = document.querySelector(".breadcrumb.list-inline ul");
+      if (breadcrumbList) {
+        const currentPage = getCurrentPage();
+        breadcrumbList.innerHTML = `
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./index.html">Products</a></li>
+          <li><a href="./${currentPage}.html">${capitalizeFirstLetter(currentPage)}</a></li>
+          <li>${name || "Product"}</li>
+        `;
+      }
+  
+      
+      function getCurrentPage() {
+        // Extract the page name from the current URL
+        const currentPageUrl = window.location.pathname.split("/").pop();
+        return currentPageUrl.split(".")[0];
+      }
+  
+      function capitalizeFirstLetter(string) {
+        // Capitalize the first letter of a string
+        return string.charAt(0).toUpperCase() + string.slice(1);
+      }
+    });
+  </script>
+  
+ 
+  
+    
+</body>
+</html>
